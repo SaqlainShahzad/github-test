@@ -1,13 +1,13 @@
-name: CI/CD test
+name: schedule workflow
 
 on:
-  push: 
-    branches: [ main ]
+  schedule:
+    - cron: "21 10 * * *"
 
 jobs:
-  demo:
+  run_script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 1st workflow
-        run: echo "Github actions ka pehla workflow"
+      - name: Print msg
+        run: echo "schedule worflow executed"
